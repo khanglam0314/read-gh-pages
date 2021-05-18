@@ -10,6 +10,7 @@ class Counter extends Component {
   }
 
   increment() {
+    /*
     this.setState(
       {
         count: this.state.count + 1,
@@ -18,6 +19,12 @@ class Counter extends Component {
         console.log("Callback value", this.state.count);
       }
     ); // this is callback function, call after the state has been updated
+      */
+    // for calling 5 increment method at once
+    this.setState((prevState, props) => ({
+      count : prevState.count + 1
+    }))
+     
     console.log(this.state.count); //this is called before the state gets called
   }
 
