@@ -7,7 +7,7 @@ import Message from './components/Message'
 import Counter from './components/Counter';
 import FunctionClick from './components/FunctionClick';
 import ClassClick from './components/ClassClick';
-import EventBind from './EventBind';
+import EventBind from './components/EventBind';
 import ParentComponent from './components/ParentComponent';
 import UserGreeting from './components/UserGreeting';
 import NameList from './components/NameList';
@@ -19,8 +19,18 @@ import styles from './appStyles.module.css'
 function App() {
   return (
     <div className="App">
+      {/*Approach 3: CSS Modules*/}
+
+      {/*Global*/}
       <h1 className='error'>Error</h1>
-      <h1 className={styles.success}>Success</h1>
+      {/* Notes: CSS applies to every child component -> conflict*/}
+
+      {/*Module*/}
+      <h1 className={styles.success}>Success</h1>  
+      {/*Notes: Classes are locally scoped by default 
+      so can not be used in Child Component */}
+
+
       {/* <Inline /> */}
       {/* <Stylesheet primary={true}/> */}
       {/* <NameList /> */}
